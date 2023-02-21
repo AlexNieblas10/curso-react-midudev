@@ -1,13 +1,10 @@
 import React from "react";
-import resultados from "../mocks/true.json";
-
-const peliculas = resultados.Search;
 
 function Movie({ movies }) {
   return (
-    <ul>
+    <ul className="movies">
       {movies.map((peli) => (
-        <li key={peli.id}>
+        <li key={peli.id} className="movie">
           <h3>{peli.title}</h3>
           <p>{peli.year}</p>
           <img src={peli.poster} alt={peli.title} />
@@ -22,6 +19,6 @@ function NoMovies() {
 }
 
 export function Movies({ movies }) {
-  const peliculasReales = peliculas?.length > 0;
+  const peliculasReales = movies?.length > 0;
   return peliculasReales ? <Movie movies={movies} /> : <NoMovies />;
 }
