@@ -1,7 +1,4 @@
 import React from "react";
-import resultados from "../mocks/true.json";
-
-const peliculas = resultados.Search;
 
 function Movie({ movies }) {
   return (
@@ -22,6 +19,6 @@ function NoMovies() {
 }
 
 export function Movies({ movies }) {
-  const peliculasReales = peliculas?.length > 0;
+  const peliculasReales = movies?.length > 0;
   return peliculasReales ? <Movie movies={movies} /> : <NoMovies />;
 }
