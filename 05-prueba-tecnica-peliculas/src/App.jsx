@@ -5,11 +5,10 @@ import { useSearch } from "./hooks/useSearch";
 
 export function App() {
   const { value, setValue, error } = useSearch()
-  const { movies, getMovies } = useMovies({ value });
+  const { movies, loading, getMovies } = useMovies({ value });
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(value);
     getMovies()
   }
 
@@ -28,7 +27,8 @@ export function App() {
       </form>
 
       <main>
-        <Movies movies={movies} />
+        {loading ?<p>Cargando...</p> : <Movies movies={movies} />}
+        
 
       </main>
     </div>
