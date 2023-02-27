@@ -1,0 +1,24 @@
+.main-container{
+  width: 100%;
+  
+}
+
+.list-of-elements{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.element{
+  width: 100%;
+  list-style: none;
+  display: grid;
+  place-items: center;
+}
+
+.element img{
+  width: 100%;
+}
